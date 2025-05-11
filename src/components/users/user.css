@@ -1,0 +1,51 @@
+.card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: #fff;
+  }
+  
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .photo img {
+    height: 240px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+    font-size: 0.95rem;
+    color: #333;
+  }
+  
+  .card-body .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #222;
+  }
+  
+  .card-text strong {
+    display: inline-block;
+    width: 120px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .card-footer {
+    font-size: 0.85rem;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 8px 0;
+  }
+  
+  .btn-danger {
+    width: 100%;
+    border-radius: 0 0 16px 16px;
+    font-weight: 500;
+  }
+  
