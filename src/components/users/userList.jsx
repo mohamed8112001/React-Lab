@@ -11,6 +11,7 @@ const UserList = () => {
   const [users, setUsers] = useState(usersData);
   const [search, setSearch] = useState("");
 
+  
   const handleDelete = (id) => {
     // console.log(id);
     const filterItem = users.filter((user) => user.id !== id);
@@ -24,6 +25,8 @@ const UserList = () => {
   return (
     <>
     <Header title={'List of Users'}/>
+
+    
       <div className="container mt-3">
         <input
           type="text"

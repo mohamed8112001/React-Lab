@@ -23,11 +23,12 @@ export default function RecipeDetails() {
       })
   }, [params.id])
   return (
-    <div>
-      <h1>Hello from RecipeDetails</h1>
+    <>
+      <h1>Hello from   RecipeDetails</h1>
+      
       {recipe ?.name}
      
-    </div>
+    </>
   )
 }
 

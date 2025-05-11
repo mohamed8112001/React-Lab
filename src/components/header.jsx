@@ -1,49 +1,54 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './header.css';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import ThemeContext from '../context/theme';
 
 export default function Header() {
+  const countValue = useSelector(state => state.counter.countVal);
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div class="main-navbar shadow-sm sticky-top">
-        <div class="top-navbar">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
-                        <h5 class="brand-name">Funda Ecom</h5>
+    <div className="main-navbar shadow-sm sticky-top">
+        <div className="top-navbar">
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
+                        <h5 className="brand-name">Funda Ecom</h5>
                     </div>
-                    <div class="col-md-5 my-auto">
+                    <div className="col-md-5 my-auto">
                         <form role="search">
-                            <div class="input-group">
-                                <input type="search" placeholder="Search your product" class="form-control" />
-                                <button class="btn bg-white" type="submit">
-                                    <i class="fa fa-search"></i>
+                            <div className="input-group">
+                                <input type="search" placeholder="Search your product" className="form-control" />
+                                <button className="btn bg-white" type="submit">
+                                    <i className="fa fa-search"></i>
                                 </button>
                             </div>
                         </form>
                     </div>
-                    <div class="col-md-5 my-auto">
-                        <ul class="nav justify-content-end">
+                    <div className="col-md-5 my-auto">
+                        <ul className="nav justify-content-end">
                             
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fa fa-shopping-cart"></i> Cart (0)
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">
+                                    <i className="fa fa-shopping-cart"></i> Cart (0)
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fa fa-heart"></i> Wishlist (0)
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">
+                                    <i className="fa fa-heart"></i> Wishlist (0)
                                 </a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-user"></i> Username 
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i className="fa fa-user"></i> Username 
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a className="dropdown-item" href="#"><i className="fa fa-user"></i> Profile</a></li>
+                                <li><a className="dropdown-item" href="#"><i className="fa fa-list"></i> My Orders</a></li>
+                                <li><a className="dropdown-item" href="#"><i className="fa fa-heart"></i> My Wishlist</a></li>
+                                <li><a className="dropdown-item" href="#"><i className="fa fa-shopping-cart"></i> My Cart</a></li>
+                                <li><a className="dropdown-item" href="#"><i className="fa fa-sign-out"></i> Logout</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -51,21 +56,21 @@ export default function Header() {
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="#">
+        <nav className="navbar navbar-expand-lg">
+            <div className="container-fluid">
+                <a className="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="#">
                     Funda Ecom
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className="collapse navbar-collapse"  id="navbarSupportedContent">
                 <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="add-recipe">Add Recipe</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="recipe-counter">Recipe Counter</Link>
+                <Link className="nav-link" to="recipe-counter">Recipe Counter : { countValue }</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="setting">Setting</Link>
@@ -73,6 +78,7 @@ export default function Header() {
               <li className="nav-item">
                 <Link className="nav-link" to="user">Users</Link>
               </li>
+              
               <li className="nav-item">
                 <Link className="nav-link" to="todos">To Do</Link>
               </li>
@@ -84,7 +90,11 @@ export default function Header() {
               </li>
               
               <li className="nav-item">
-                {/* <a className="nav-link disabled" aria-disabled="true">Disabled</a> */}
+                <span className="nav-link" >Theme : { theme }</span>
+              </li>
+              
+              <li className="nav-item">
+                {/* <span classNameName="nav-link " >Thrme :{theme}</span> */}
               </li>
             </ul>
                 </div>
