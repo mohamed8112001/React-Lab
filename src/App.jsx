@@ -23,11 +23,11 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<RecipesList />} />
+          <Route path="/recipe" element={<RecipesList />} />
           <Route path="/user" element={<UserList />} />
           <Route path="/add-recipe" element={<AddRecipe />} />
           <Route path="/todos" element={<Parent />} />
-          <Route path="/product" element={<ProductsList />} />
+          <Route path="/" element={<ProductsList />} />
           <Route path="/recipe-counter" element={<RecipeCounter />} />
           <Route path="/product-details/:id" element={<PrductDetails />} />
           <Route path="/recipe-details/:id" element={<RecipeDetails />} />
