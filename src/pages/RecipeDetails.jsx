@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { recipesData } from '../components/utils/data'; // أو المسار الصحيح للملف
+import { recipesData } from '../components/utils/data'; 
 
 export default function RecipeDetails() {
   const [recipe, setRecipe] = useState(null);
@@ -13,7 +13,7 @@ export default function RecipeDetails() {
     setRecipe(foundRecipe);
   }, [params.id]);
 
-  if (!recipe) return null; // لا تعرض شيء حتى يتم تحميل البيانات
+  if (!recipe) return null;
 
   return (
     <div className="container my-5">
@@ -31,7 +31,7 @@ export default function RecipeDetails() {
           <p><strong>Cook Time:</strong> {recipe.cookTimeMinutes} mins</p>
           <p><strong>Servings:</strong> {recipe.servings}</p>
           <p><strong>Calories/Serving:</strong> {recipe.caloriesPerServing} kcal</p>
-          <p><strong>Rating:</strong> {recipe.rating} ⭐ ({recipe.reviewCount} reviews)</p>
+          <p><strong>Rating:</strong> {recipe.rating}  ({recipe.reviewCount} reviews)</p>
 
           <h5>Ingredients:</h5>
           <ul>
