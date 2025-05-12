@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { recipesData } from "../components/utils/data";
+=======
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { recipesData } from '../components/utils/data'; 
+>>>>>>> 46d42822e5ee3844223792f51804b82c2658f2b0
 
 export default function RecipeDetails() {
   const [recipe, setRecipe] = useState(null);
@@ -17,6 +23,7 @@ export default function RecipeDetails() {
 
   return (
     <div className="container my-5">
+<<<<<<< HEAD
       <div className="card shadow-lg border-0 p-4">
         <div className="row g-4">
           <div className="col-md-5">
@@ -54,6 +61,23 @@ export default function RecipeDetails() {
             </div>
           </div>
         </div>
+=======
+      <div className="card shadow-lg border-0">
+        {/* <img
+          src={recipe.image}
+          className="card-img-top d-block"
+          alt={recipe.name}
+        /> */}
+        <div className="card-body">
+          <h2 className="card-title">{recipe.name}</h2>
+          <p><strong>Cuisine:</strong> {recipe.cuisine}</p>
+          <p><strong>Difficulty:</strong> {recipe.difficulty}</p>
+          <p><strong>Prep Time:</strong> {recipe.prepTimeMinutes} mins</p>
+          <p><strong>Cook Time:</strong> {recipe.cookTimeMinutes} mins</p>
+          <p><strong>Servings:</strong> {recipe.servings}</p>
+          <p><strong>Calories/Serving:</strong> {recipe.caloriesPerServing} kcal</p>
+          <p><strong>Rating:</strong> {recipe.rating}  ({recipe.reviewCount} reviews)</p>
+>>>>>>> 46d42822e5ee3844223792f51804b82c2658f2b0
 
         <hr className="my-4" />
 
