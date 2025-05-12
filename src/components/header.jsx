@@ -83,10 +83,10 @@ export default function Header() {
                 <Link className="nav-link" to="todos">To Do</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="product">Product</Link>
+                <Link className="nav-link" to="/recipe">Recipes</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">Recipes</Link>
+                <Link className="nav-link" to="/">Products</Link>
               </li>
               
               <li className="nav-item">

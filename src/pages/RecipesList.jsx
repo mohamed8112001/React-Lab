@@ -3,7 +3,7 @@ import { recipesData } from "../components/utils/data"
 import RecipeCard from "../components/RecipeCard"
 import Header from "../components/header/header.component"
 import axios from 'axios';
-import Axios from "../Apis/config";
+import Axios from "../Apis/config1";
 
 const RecipesList = () => {
   const [recipes, setRecipes] = useState(recipesData)
@@ -20,15 +20,18 @@ const RecipesList = () => {
     }
   return (
     <>
-    <Header title={'Recipes'}/>
-      <div className="row row-cols-1 row-cols-md-3 g-4">
-        {recipes.map((recipe) => (
-          <div className="col" key={recipe.id}>
-            {/* pass recipe from parent to child */}
-           <RecipeCard recipe={recipe} onDelete={(id) =>handleDelete(id)} />
-          </div>
-        ))}
+     <Header title={"Recipes"} />
+
+<div className="container py-5">
+  <div className="row row-cols-1 row-cols-md-3 g-4">
+    {recipes.map((recipe) => (
+      <div className="col" key={recipe.id}>
+        {/* Pass recipe from parent to child */}
+        <RecipeCard recipe={recipe} onDelete={(id) => handleDelete(id)} />
       </div>
+    ))}
+  </div>
+</div>
     </>
   )
 }
